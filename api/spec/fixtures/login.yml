@@ -1,0 +1,35 @@
+---
+- title: senha incorreta
+  payload:
+    email: danieldouglas26@gmail.com
+    password: pwd1234
+  code: 401
+  error: Unauthorized
+- title: usuario não existe
+  payload:
+    email: daniel404@gmail.com
+    password: pwd1234
+  code: 401
+  error: Unauthorized
+- title: email em branco
+  payload:
+    email: ""
+    password: pwd1234
+  code: 412
+  error: required email
+- title: sem o campo email
+  payload:
+    password: pwd1234
+  code: 412
+  error: required email
+- title: senha em branco
+  payload:
+    email: danieldouglas26@gmail.com
+    password: ""
+  code: 412
+  error: required password
+- title: sem o campo senha
+  payload:
+    email: danieldouglas26@gmail.com
+  code: 412
+  error: required password

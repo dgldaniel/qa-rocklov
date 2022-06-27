@@ -4,13 +4,21 @@ Mongo::Logger.logger = Logger.new("./logs/mongo.log")
 
 # manager Mongo DB
 class MongoDB
-  attr_accessor :users, :equipos
+  attr_accessor :users, :equipos, :client
 
   def initialize
-    client = Mongo::Client.new("mongodb://localhost:27017/rocklov")
+    @client = Mongo::Client.new("mongodb://localhost:27017/rocklov")
 
     @users = client[:users]
     @equipos = client[:equipos]
+  end
+
+  def drop_danger
+    @client.database.drop
+  end
+
+  def insert_users(docs)
+    @users.insert_many docs
   end
 
   def remove_user(email)

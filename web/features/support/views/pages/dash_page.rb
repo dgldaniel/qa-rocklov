@@ -29,4 +29,12 @@ class DashPage
   def cancel_removal
     click_on 'Não'
   end
+
+  def order
+    find('.notifications p')
+  end
+
+  def order_actions(name)
+    page.has_css? '.notifications button', text: name
+  end
 end

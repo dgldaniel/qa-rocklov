@@ -5,7 +5,6 @@ Funcionalidade: Login
   Quero acessar o sistema da RockLov
   Para que eu possa anunicar meus equipamentos musicais
 
-  @temp
   Cenario: Login do usuário
     Dado que acesso a página principal
     Quando submeto minhas credenciais com "danieldouglas26@gmail.com" e "pwd123"

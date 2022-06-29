@@ -2,7 +2,8 @@ pipeline {
     agent {
         docker {
             image 'ruby:2.6.5'
-            args '--network rocklov-network'
+            args '-u root --network rocklov-network'
+            alwaysPull true
         }
     }
 

@@ -7,6 +7,10 @@ pipeline {
         }
     }
 
+    environment {
+        PATH = "/bin:/usr/bin:usr/local/bin"
+    }
+
     stages {
         stage('Prep') {
             steps {

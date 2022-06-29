@@ -7,19 +7,21 @@ pipeline {
         }
     }
 
-    environment {
-        PATH = "/bin:/usr/bin:usr/local/bin"
-    }
-
     stages {
         stage('Prep') {
             steps {
-                sh "cd api && bundle install"
+                sh  """
+                    cd api && bundle install
+                    """
+
             }
         }
         stage('Testing') {
             steps {
-                sh "cd api && rspec"
+                sh """
+                    cd api && rspec
+                    """
+
             }
         }
     }

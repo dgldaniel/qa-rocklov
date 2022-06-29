@@ -9,16 +9,13 @@ pipeline {
     stages {
         stage('Prep') {
             steps {
-                sh '''#!/bin/bash
-                cd api && bundle install
-                '''
+                sh """cd api && bundle install"""
+              
             }
         }
         stage('Testing') {
             steps {
-                sh '''#!/bin/bash
-                cd api && rspec
-                '''
+                sh """cd api && rspec"""
             }
         }
 

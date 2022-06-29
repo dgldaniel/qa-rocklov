@@ -9,12 +9,12 @@ pipeline {
     stages {
         stage('Prep') {
             steps {
-                bat "cd api && bundle install"
+                sh "cd api && bundle install"
             }
         }
         stage('Testing') {
             steps {
-                bat "cd api && rspec"
+                sh "cd api && rspec"
             }
         }
     }
